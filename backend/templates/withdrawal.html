@@ -1,0 +1,76 @@
+<!-- templates/withdrawal_confirmation_email.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Inline CSS for better email client compatibility */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            color: #333333;
+        }
+        .content p {
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            color: #777777;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #28a745;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Withdrawal Confirmed</h1>
+        </div>
+        <div class="content">
+            <p>Hi {{ username }},</p>
+            <p>We are pleased to inform you that your withdrawal request of <strong>${{ amount }}</strong> has been successfully processed.</p>
+            <p>The funds have been transferred to your designated account.</p>
+            <a href="{{ account_url }}" class="button">View Your Account</a>
+            <p>If you have any questions or need further assistance, please don't hesitate to contact our support team.</p>
+            <p>Best regards,<br>The Forex Company Team</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 EX-Change. All rights reserved.</p>
+            <p>123 Forex Street, Finance City, Country</p>
+        </div>
+    </div>
+</body>
+</html>
