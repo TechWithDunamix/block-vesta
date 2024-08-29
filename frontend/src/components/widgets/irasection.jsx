@@ -28,19 +28,19 @@ const CryptoIRAsSection = () => {
           {/* Feature List */}
           <div className="space-y-4">
             <div className="flex items-start">
-              <FaCheckCircle className="text-green-600 mt-1 mr-2" />
+              <FaCheckCircle className="text-blue-600 mt-1 mr-2" />
               <p className="text-gray-700">
                 Flexible IRA options with a mix of traditional and crypto assets.
               </p>
             </div>
             <div className="flex items-start">
-              <FaCheckCircle className="text-green-600 mt-1 mr-2" />
+              <FaCheckCircle className="text-blue-600 mt-1 mr-2" />
               <p className="text-gray-700">
                 Top-tier security to protect your investments.
               </p>
             </div>
             <div className="flex items-start">
-              <FaCheckCircle className="text-green-600 mt-1 mr-2" />
+              <FaCheckCircle className="text-blue-600 mt-1 mr-2" />
               <p className="text-gray-700">
                 Expert support to guide you through the investment process.
               </p>

@@ -35,7 +35,7 @@ class UserSignup(generics.GenericAPIView):
 			token,_ = Token.objects.get_or_create(user = user)
 			url = request.build_absolute_uri(reverse_lazy("user-activate",kwargs = {"id":otp.id}))
 			print(url+"?code="+otp.code)
-			body = f'''Welcome to Ex-change \n 
+			body = f'''Welcome to block-vesta \n 
 				click the link too activate your account \n 
 				{url+"?code="+otp.code}
        			'''
@@ -56,15 +56,15 @@ class ActivateUserView(APIView):
         try:
             otp = self.get_queryset().get(id = id)
         except OTP.DoesNotExist:
-            return redirect("https://ex-change.vercel.app/not-found")
+            return redirect("https://block-vesta.vercel.app/not-found")
         
         if otp.code == request.GET.get("code"):
             otp.user.is_confirmed = True 
             otp.deleted = True 
             otp.save()
             otp.user.save()
-            return redirect("https://ex-change.vercel.app/dashboard")
-        return redirect("https://ex-change.vercel.app/not-found")
+            return redirect("https://block-vesta.vercel.app/dashboard")
+        return redirect("https://block-vesta.vercel.app/not-found")
         
             
         

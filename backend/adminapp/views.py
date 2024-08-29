@@ -248,7 +248,7 @@ class WithdrawalDetailView(AdminMixin,GenericAPIView):
         serializer = self.get_serializer(withdrawal, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            send_withdrawal_confirmation_email(obj.user.email,obj.user.username,obj.amount,"https://ex-change.vercel.app/dashboard")
+            send_withdrawal_confirmation_email(obj.user.email,obj.user.username,obj.amount,"https://block-vesta.vercel.app/dashboard")
 
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -275,7 +275,7 @@ class DepositListCreateView(AdminMixin,GenericAPIView):
         obj.transaction.pending = False 
         obj.save()
         obj.transaction.save()
-        send_deposit_confirmation_email(obj.user.email,obj.user.username,obj.amount,"https://ex-change.vercel.app/dashboard")
+        send_deposit_confirmation_email(obj.user.email,obj.user.username,obj.amount,"https://block-vesta.vercel.app/dashboard")
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class DepositDetailView(AdminMixin,GenericAPIView):

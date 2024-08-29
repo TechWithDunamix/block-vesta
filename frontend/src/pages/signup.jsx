@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FiMail, FiUser, FiPhone, FiLock } from 'react-icons/fi';
 import Layout from '../components/UI/layout.jsx';
 import '../index.css';
-
-const countries = ["Nigeria", "United States", "Canada", "India", "Germany", "Brazil", "China", "Japan", "United Kingdom", "Australia", /* Add the full list of countries */];
-
+import { countries,callMainApi } from '../utils.js';
+import { toQueryString } from '@zayne-labs/callapi';
+import { message } from 'antd';
 const SignupForm = () => {
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
@@ -15,7 +15,7 @@ const SignupForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -32,15 +32,28 @@ const SignupForm = () => {
       return;
     }
 
-    setTimeout(() => {
-      setIsLoading(false);
-      alert('Form submitted successfully!');
-    }, 2000);
+    e.preventDefault()
+    
+    const request = await callMainApi('/auth/register',{
+      body:toQueryString(formData),
+      method:'POST'
+    })
+    if(!request.error){
+        message.success("Submited");
+        localStorage.setItem("token",request.data.token)
+        // localStorage.setItem("user_email",request.data)
+        localStorage.removeItem("userEmail")
+
+        console.log(request)
+        window.location.href  = '/dashboard'
+        return ;
+
+    }
   };
 
   return (
     <Layout>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-400 to-blue-600">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-600">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg mx-5 md:max-w-3xl lg:max-w-4xl">
           
           {/* Welcome Message */}
@@ -115,17 +128,18 @@ const SignupForm = () => {
 
               {/* Country */}
               <div className="relative">
-                <select
-                  name="country"
-                  required
-                  onChange={handleChange}
-                  className="pl-3 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-600"
-                >
-                  <option value="">Select your country</option>
-                  {countries.map((country, index) => (
-                    <option key={index} value={country}>{country}</option>
-                  ))}
-                </select>
+              <select
+              required
+              name='country'
+              onChange={handleChange}
+              className="pl-3 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-600"
+              defaultValue=""
+            >
+              <option value="" disabled>Select your country</option>
+              {countries.map((country) => (
+                <option key={country.value} value={country.value}>{country.label}</option>
+              ))}
+            </select>
                 {errors.country && <p className="text-red-500 font-light mt-1">{errors.country}</p>}
               </div>
             </div>

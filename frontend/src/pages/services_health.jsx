@@ -37,7 +37,7 @@ const ServicePage = () => {
               {[
                 { title: 'Cryptocurrency Wallets', desc: 'Secure and manage your digital assets with confidence.', icon: <FaWallet className="text-purple-600 w-10 h-10 mx-auto mb-4" /> },
                 { title: 'Market IRAs', desc: 'Innovative retirement investment solutions with high market returns.', icon: <FaChartLine className="text-blue-600 w-10 h-10 mx-auto mb-4" /> },
-                { title: 'Health Insurance', desc: 'Affordable plans that cover your healthcare needs.', icon: <FaShieldAlt className="text-green-600 w-10 h-10 mx-auto mb-4" /> },
+                { title: 'Health Insurance', desc: 'Affordable plans that cover your healthcare needs.', icon: <FaShieldAlt className="text-blue-600 w-10 h-10 mx-auto mb-4" /> },
                 { title: 'Primary Care', desc: 'General health services to keep you in optimal shape.', icon: <FaUserMd className="text-red-600 w-10 h-10 mx-auto mb-4" /> },
                 { title: 'Crypto Investments', desc: 'Grow your portfolio with expert-backed cryptocurrency investments.', icon: <FaBitcoin className="text-yellow-500 w-10 h-10 mx-auto mb-4" /> },
                 { title: 'Financial Planning', desc: 'Comprehensive plans for your future financial success.', icon: <FaHandHoldingUsd className="text-blue-500 w-10 h-10 mx-auto mb-4" /> },

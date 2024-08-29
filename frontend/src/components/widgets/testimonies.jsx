@@ -52,7 +52,7 @@ const TestimonialCarousel = () => {
       country: "Nigeria",
     },
     {
-      name: "Robert Green",
+      name: "Robert blue",
       review:
         "BlockVesta helped me diversify my IRA by adding crypto, and their platform makes it easy to track and manage everything.",
       rating: 5,
