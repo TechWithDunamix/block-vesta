@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database 
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DEV = True
+DEV = False
 if DEV:
     DATABASES = {
     'default': {
@@ -103,9 +103,9 @@ else:
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'defaultdb',
         'USER': 'avnadmin',
-        'PASSWORD': 'AVNS_AYT2EouHArtnd6LqoVG',
-        'HOST': 'pg-ba113e3-exhchange7-b192.d.aivencloud.com',
-        'PORT': '15143',
+        'PASSWORD': 'AVNS_efO4brAGpf8EuUDN9r7',
+        'HOST': 'pg-306b1af9-blockvestaa-f3aa.c.aivencloud.com',
+        'PORT': '13195',
         'OPTIONS': {
             'sslmode': 'require',
         },

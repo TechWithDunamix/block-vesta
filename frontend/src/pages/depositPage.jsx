@@ -5,10 +5,10 @@ import { callMainApi } from "../utils.js";
 import { message } from "antd";
 import { CopyOutlined } from "@ant-design/icons";
 
-const btcAddress = "bc1q70luh4hg3afvjzgr8mf03l9f0u2r4vay4wry7q";
-const usdtAddress = "TLfGBHYrw62uWbLpidhEDZqZNkhy45vKsY";
-const etherum = "0xbe617e224d5d192e2945d8a94dD1556270DE5c97"
-const usdt2 = "0xbe617e224d5d192e2945d8a94dD1556270DE5c97"
+const btcAddress = "11LpXmkQXWtKuLYhjTkPWD25kkMC71aMi";
+const usdtAddress = "0x6c3a2656d9dfc5088e8d644e7d0ec0bb3fef045f";
+const etherum = "0x6c3a2656d9dfc5088e8d644e7d0ec0bb3fef045f"
+const usdt2 = "TSwJuxgSDYmRCYqaw8Bm6tBWkdFsmXQM6y"
 const DepositPage = () => {
   const [amount, setAmount] = useState(0);
   const [errors, setErrors] = useState({});

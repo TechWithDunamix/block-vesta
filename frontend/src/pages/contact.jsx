@@ -30,7 +30,7 @@ const ContactPage = () => {
                         <MailOutlined className='px-3 bg-blue-300 text-blue-600 rounded-lg text-[2rem] p-3' />
                         <p className='text-[1.4rem]'>Email</p>
                         <p className='mt-4 text-slate-500 w-[250px]'>
-                            <a href="mailto:exchange7@gmail.com">exchange7@gmail.com</a>
+                            <a href="mailto:block-vesta7@gmail.com">block-vesta7@gmail.com</a>
                         </p>
                     </div>
 

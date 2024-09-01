@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
                         <div className="flex flex-col md:w-1/3 mb-8 md:mb-0">
                             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
                             <p className="text-gray-400 mb-2">Phone: <a href="tel:+16292513701" className="text-blue-400">+1 (629) 251-3701</a>, <a href="tel:+15406769802" className="text-blue-400">+1 (540) 676-9802</a></p>
-                            <p className="text-gray-400 mb-2">Email: <a href="mailto:exhchange7@gmail.com" className="text-blue-400">exchange7@gmail.com</a></p>
+                            <p className="text-gray-400 mb-2">Email: <a href="mailto:exhchange7@gmail.com" className="text-blue-400">block-vesta7@gmail.com</a></p>
                             <p className="text-gray-400">Address: Start trading with Indices commodities e.tc</p>
                         </div>
                     </div>

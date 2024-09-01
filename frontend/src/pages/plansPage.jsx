@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { Card, Button, message } from 'antd';
 import { callMainApi } from '../utils';
 import 'tailwindcss/tailwind.css';
-import Layout from '../components/layouts'
+import Layout from '../components/UI/layout';
+
+
 const PlanPage = () => {
   const [plans, setPlans] = useState([]);
 
