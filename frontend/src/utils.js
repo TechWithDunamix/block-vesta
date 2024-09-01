@@ -207,7 +207,7 @@ export const callMainApi = callApi.create({
     token: localStorage.getItem("token")
   },
  
-  baseURL:"https://block-vesta-45gn.vercel.app/",
+  baseURL:"https://block-vesta-45gn.vercel.app",
   // baseURL:"http://localhost:2300/api/v1",
   headers:{
     "HTTP-ADMIN-TOKEN":localStorage.getItem("admin_token")
