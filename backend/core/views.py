@@ -268,9 +268,9 @@ class InvestmentView(generics.GenericAPIView):
         
  
 class PlanView(generics.GenericAPIView):
-    serializer_class = AdminPlanSerializer
-    
-    def get(self,request,*args,**kwargs):
-        obj:object = AdminPlans.objects.all()
-        serializer  = self.get_serializer_class()(obj,many = True)
-        return Response(serializer.data)
+	queryset = AdminPlans.objects.all()
+	serializer_class = AdminPlanSerializer
+	def get(self,request,*args,**kwargs):
+		obj = AdminPlans.objects.all()
+		serializer  = self.get_serializer_class()(obj,many = True)
+		return Response(serializer.data)
