@@ -149,9 +149,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'exhchange7@gmail.com'
-EMAIL_HOST_PASSWORD = 'aymicpwwgewqtpsq'
-DEFAULT_FROM_EMAIL = 'exhchange7@gmail.com'
+EMAIL_HOST_USER = 'blockvestaa@gmail.com'
+EMAIL_HOST_PASSWORD = 'wugxecckhkbiayjj'
+DEFAULT_FROM_EMAIL = 'blockvestaa@gmail.com'
 
 CORS_ALLOW_HEADERS = [
     'accept',

@@ -4,6 +4,7 @@ import CarouselHero from "../components/widgets/heroHOme";
 import TestimonialCarousel from "../components/widgets/testimonies";
 import WhyChooseUsSection from "../components/widgets/whychooseus";
 import CryptoIRAsSection from "../components/widgets/irasection";
+import { Link } from "react-router-dom";
 const IndexPage = () => {
     return (
         <Layout>
@@ -18,13 +19,17 @@ const IndexPage = () => {
                         <div className="flex gap-4 md:my-12 flex-col md:flex-row">
                             {/* Button */}
                             <div className="">
-                                <p className="my-3">I know what I want.</p>
+                                <p className="my-3">Am new here.</p>
+                                <Link to="/signup">
                                 <button className="text-[0.8rem]  w-full bg-blue-600 px-3 py-2 rounded-l-lg rounded-b-lg text-white"> Create an account </button>
+                                </Link>
                             </div>
 
                             <div className="">
-                                <p className="my-3">I know what I want.</p>
-                                <button className="text-[0.8rem]  w-full bg-white border-2 border-blue-600 px-3 py-2  rounded-r-lg rounded-b-lg text-blue-600"> Create an account </button>
+                                <p className="my-3">I Already have an account .</p>
+                                <Link to="/dashboard">
+                                <button className="text-[0.8rem]  w-full bg-white border-2 border-blue-600 px-3 py-2  rounded-r-lg rounded-b-lg text-blue-600">Login </button>
+                                </Link>
                             </div>
 
                         </div>

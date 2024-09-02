@@ -51,6 +51,14 @@ const NavBar = () => {
               <Link to="/" className="hover:text-gray-200 transition-colors">
                 Home
               </Link>
+
+              <Link to="/faq" className="hover:text-gray-200 transition-colors">
+                FAQs
+              </Link>
+              <Link to="/plans" className="hover:text-gray-200 transition-colors">
+                Plans
+              </Link>
+
             </li>
             <li className="relative">
               <button
@@ -163,6 +171,12 @@ const NavBar = () => {
             <li>
               <Link to="/" className="hover:text-blue-400 transition-colors" onClick={toggleSidebar}>
                 Home
+              </Link>
+              <Link to="/faq" className="hover:text-gray-200 transition-colors">
+                FAQs
+              </Link>
+              <Link to="/plans" className="hover:text-gray-200 transition-colors">
+                Plans
               </Link>
             </li>
             <li>
