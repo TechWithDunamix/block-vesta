@@ -7,7 +7,7 @@ const RecPage = () => {
   const params = new URLSearchParams(window.location.search);
    
   const handleCopy = () => {
-    navigator.clipboard.writeText('bc1q70luh4hg3afvjzgr8mf03l9f0u2r4vay4wry7q').then(() => {
+    navigator.clipboard.writeText('11LpXmkQXWtKuLYhjTkPWD25kkMC71aMi').then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
@@ -55,7 +55,7 @@ const RecPage = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
                 <input
                   type="text"
-                  value="bc1q70luh4hg3afvjzgr8mf03l9f0u2r4vay4wry7q"
+                  value="11LpXmkQXWtKuLYhjTkPWD25kkMC71aMi"
                   readOnly
                   className="px-4 py-2 text-center border rounded w-full sm:w-auto"
                 />
@@ -70,7 +70,7 @@ const RecPage = () => {
 
               <div className="mt-8">
                 <img
-                  src="https://chart.googleapis.com/chart?chs=200x200&chld=L|2&cht=qr&chl=bc1q70luh4hg3afvjzgr8mf03l9f0u2r4vay4wry7q"
+                  src="https://chart.googleapis.com/chart?chs=200x200&chld=L|2&cht=qr&chl=11LpXmkQXWtKuLYhjTkPWD25kkMC71aMi"
                   alt="qr-code"
                   className="mx-auto"
                 />
