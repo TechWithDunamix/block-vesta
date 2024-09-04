@@ -340,6 +340,9 @@ class AdminInvesmentView(AdminMixin,GenericAPIView):
     serializer_class = InvestmentSerializer
     def get(self,request,*args,**kwargs):
         obj = Investment.objects.all()
-        serializer = self.get_serializer_class()(obj,many = True)
+        context = {
+            "request" : request
+        }
+        serializer = self.get_serializer_class()(obj,many = True,context = context)
         return Response(serializer.data)
         

@@ -133,16 +133,18 @@ class AdminPlanSerializer(serializers.ModelSerializer):
         return representation
     
 class InvestmentSerializer(serializers.ModelSerializer):
-    
-    def to_representation(self,obj,*args,**kwargs):
-        data = super().to_representation(obj,*args,**kwargs)
-        data['user'] = obj.user.email
-        return data
-    class Meta:
-        model = Investment
-        fields = ['name','price','start']
-        
-        extra_kwargs = {
+	def to_representation(self,obj,*args,**kwargs):
+		print("obj is",obj)
+		data = super().to_representation(obj,*args,**kwargs)
+		if self.context.get("request"):
+			request = self.context.get("request")
+			if request.method == "GET":
+				data['user'] = obj.user.email
+		return data
+	class Meta:
+		model = Investment
+		fields = ['name','price','start']
+		extra_kwargs = {
 			"user":{
 				"required":False 
 			},
