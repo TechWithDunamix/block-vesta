@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-
+import Logo from "../logo";
 const NavBar = () => {
   const [dropdownOpen, setDropdownOpen] = useState({
     services: false,
@@ -31,7 +31,7 @@ const NavBar = () => {
       <header className="bg-white text-blue-600 py-4 shadow-md">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-3xl font-bold uppercase tracking-wider">
-            Block-Vesta
+            <Logo />
           </h1>
           <p className="text-sm mt-2">Invest now and plan for the future</p>
           <button
