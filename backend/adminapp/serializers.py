@@ -2,6 +2,14 @@ from rest_framework import serializers
 from core.models import User, Transaction, OTP, Withdrawal, Deposit
 
 class UserSerializer(serializers.ModelSerializer):
+    ref_by = serializers.SerializerMethodField(read_only = True)
+
+    def get_ref_by(self,obj):
+        _ref_by = User.objects.filter(user_id = obj.referal_id)
+        if _ref_by.exists():
+            return _ref_by.first().username
+        return ""
+
     class Meta:
         model = User
         fields = '__all__'

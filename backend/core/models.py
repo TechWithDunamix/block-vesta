@@ -36,6 +36,8 @@ class User(AbstractBaseUser):
 	total_bonuses = models.IntegerField(default = 0)
 	total_deposit = models.IntegerField(default = 0)
 	total_withdraw = models.IntegerField(default = 0)
+	ref_by = models.CharField(max_length=120,null = True,blank= True,default="")
+
 	USERNAME_FIELD = 'email'
 
 	objects = UserManager()
@@ -43,6 +45,7 @@ class User(AbstractBaseUser):
 
 	def __str__(self):
 		return self.email
+	
 class AdminPlans(models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,unique=True)
     name = models.CharField(max_length=50)

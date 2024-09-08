@@ -12,13 +12,15 @@ def add_bonus(**kwargs):
 			transaction = Transaction.objects.create(user = user,pending = False,transaction_type = 'Welcome Bonus',amount =5)
 			user.total_bonuses = user.total_bonuses + 5 
 			user.total_balance = user.total_balance + 5
+			
 			user.save()
 			print(user.referal_id)
 			if user.referal_id:
 				try:
 
 					_user = User.objects.get(user_id = user.referal_id)
-					print(_user)
+					user.ref_by = _user.username
+					user.save()
 					_user.total_balance = _user.total_balance + 5
 					_user.total_bonuses = _user.total_bonuses + 5
 					_user.save()

@@ -8,6 +8,7 @@ const UserCard = ({ user, onClick }) => {
       <UserOutlined className="text-blue-600" style={{ fontSize: '40px' }} />
       <h3 className="mt-2 text-lg font-semibold">{user.username}</h3>
       <p className="text-gray-500">{user.email}</p>
+      <p>Refered by {user.ref_by}</p>
     </div>
   );
 };

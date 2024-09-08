@@ -178,10 +178,16 @@ const NavBar = () => {
               <Link to="/" className="hover:text-blue-400 transition-colors" onClick={toggleSidebar}>
                 Home
               </Link>
-              <Link to="/faq" className="hover:text-gray-200 transition-colors">
+              
+            </li>
+            <li>
+            <Link to="/faq" className="hover:text-gray-200 transition-colors">
                 FAQs
               </Link>
-              <Link to="/plans" className="hover:text-gray-200 transition-colors">
+             
+            </li>
+            <li>
+            <Link to="/plans" className="hover:text-gray-200 transition-colors">
                 Plans
               </Link>
             </li>

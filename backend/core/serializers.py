@@ -23,7 +23,8 @@ class UserSerializer(serializers.ModelSerializer):
 			'total_withdraw',
 			'total_deposit',
 			'total_balance',
-			'transaction')
+			'transaction',
+			"ref_by")
 
 		extra_kwargs = {
 			'password':{
@@ -44,6 +45,9 @@ class UserSerializer(serializers.ModelSerializer):
 			'total_bonuses':{
 			'read_only':True
 			},
+			"ref_by" : {
+				"read_only" :  True
+			}
 
 
 		}

@@ -126,6 +126,19 @@ const SignupForm = () => {
                 {errors.password && <p className="text-red-500 font-light mt-1">{errors.password}</p>}
               </div>
 
+              <div className="relative">
+                <FiLock className="absolute left-3 top-3 text-blue-600" style={{ fontSize: '20px' }} />
+                <input
+                  type="text"
+                  name="referal_id"
+                  required
+                  onChange={handleChange}
+                  placeholder="Referal code"
+                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+                {errors.password && <p className="text-red-500 font-light mt-1">{errors.password}</p>}
+              </div>
+
               {/* Country */}
               <div className="relative">
               <select
