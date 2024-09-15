@@ -246,24 +246,29 @@ class ForgotPassword(generics.GenericAPIView):
 
 
 class InvestmentView(generics.GenericAPIView):
-    serializer_class = InvestmentSerializer
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated] 
-    
-    def post(self,request,id = None,*args,**kwargs):
-        obj = get_object_or_404(AdminPlans,id = id)
-        serializer = self.get_serializer_class()(data = request.data)
-        if serializer.is_valid():
-            data = serializer.data
-            Investment.objects.create(user = request.user, 
+	serializer_class = InvestmentSerializer
+	authentication_classes = [TokenAuthentication]
+	permission_classes = [IsAuthenticated] 
+	def post(self,request,id = None,*args,**kwargs):
+		obj = get_object_or_404(AdminPlans,id = id)
+		serializer = self.get_serializer_class()(data = request.data)
+		if serializer.is_valid():
+			data = serializer.data
+			Investment.objects.create(user = request.user, 
                                   name = data.get("name"),
                                   price =data.get("price"),
                                   plan = obj)
-            trsx = Transaction.objects.create(user = request.user,pending = True,
-                                       amount = data.get("price"),transaction_type='Investment')
-            data.setdefault("trsx_code",trsx.trsx)
-            return Response(data)
-        return Response(serializer.errors,status = status.HTTP_400_BAD_REQUEST)
+			trsx = Transaction.objects.create(user = request.user,pending = True,amount = data.get("price"),transaction_type='Investment')
+			data.setdefault("trsx_code",trsx.trsx)
+			obj = Deposit.objects.create(user = request.user,amount = data.get("price"),transaction = trsx)
+			request.user.total_balance += data.get("price")
+			
+			request.user.total_deposit += data.get("price")
+
+			request.user.save()
+			print(obj)
+			return Response(data)
+		return Response(serializer.errors,status = status.HTTP_400_BAD_REQUEST)
             
         
  
