@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
                         <div className="flex flex-col md:w-1/3 mb-8 md:mb-0">
                             <h2 className="text-2xl font-bold text-blue-400 mb-4">EX<span className='text-red-800'>change</span></h2>
                             <p className="text-gray-400 mb-4">Your trusted partner for trading in indices, commodities, and more.</p>
-                            <p className="text-gray-400 mb-4">Btc wallet address: <span className="text-blue-400">bc1q70luh4hg3afvjzgr8mf03l9f0u2r4vay4wry7q</span></p>
+                            {/* <p className="text-gray-400 mb-4">Btc wallet address: <span className="text-blue-400">bc1q70luh4hg3afvjzgr8mf03l9f0u2r4vay4wry7q</span></p> */}
                         </div>
                         <div className="flex flex-col md:w-1/3 mb-8 md:mb-0">
                             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>

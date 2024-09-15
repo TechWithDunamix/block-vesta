@@ -12,7 +12,7 @@ const ContactPage = () => {
                         <p className='text-[2rem] text-blue-500'>Contact Us</p>
                     </div>
                     <div className='-mt-5 px-3 border-2 border-black rounded-lg py-2 animate-slide-fade'>
-                        <p><span className='text-blue-500'>block-vesta</span> > Contact Us</p>
+                        <p><span className='text-blue-500'>block-vesta</span> {">"} Contact Us</p>
                     </div>
                 </div>
 
