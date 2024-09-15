@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom';
 const DashboardLayout = ({ children }) => {
   const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"));
   const [drawerVisible, setDrawerVisible] = useState(false);
-
+  const [ReCode,setRefCode] = useState()
   const fetchUserEmail = async () => {
     const request = await callMainApi('/user/profile');
     if (!request.error) {
       localStorage.setItem("userEmail",request.data.email)
       setUserEmail(request.data.email);
+      localStorage.setItem("ref_code",request.data.user_id)
       console.log(userEmail)
     }
   };

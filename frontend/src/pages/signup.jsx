@@ -6,7 +6,10 @@ import { countries,callMainApi } from '../utils.js';
 import { toQueryString } from '@zayne-labs/callapi';
 import { message } from 'antd';
 const SignupForm = () => {
-  const [formData, setFormData] = useState({});
+  const getParams = new URLSearchParams(window.location.search)
+  const [formData, setFormData] = useState({
+    "referal_id": getParams.get("ref")
+  });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -133,6 +136,7 @@ const SignupForm = () => {
                   name="referal_id"
                   // required
                   onChange={handleChange}
+                  value={formData.referal_id}
                   placeholder="Referal code"
                   className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />

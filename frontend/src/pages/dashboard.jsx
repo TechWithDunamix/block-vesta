@@ -4,10 +4,13 @@ import { ArrowUpOutlined, ArrowDownOutlined} from '@ant-design/icons';
 import {useState,useEffect} from'react'
 import {Table} from 'antd'
 import {callMainApi} from '../utils.js'
+import { message } from 'antd';
+
 const Dashboard = () =>{
 	const [hasPlan,setHasPlan] = useState(false)
 	const [userData,setUserData] = useState()
 	const [transactions,setTransaction] = useState([])
+	const code = localStorage.getItem("ref_code")
 	useEffect(() => {
 		const fetchAPI = async () => {
 			const request = await callMainApi('/user/profile')
@@ -22,6 +25,23 @@ const Dashboard = () =>{
 
 		fetchAPI()
 	},[])
+	function copyToClipboard(text) {
+		const tempInput = document.createElement('input');
+		message.success("Copied to clipboard .")
+		tempInput.value = text;
+		
+		document.body.appendChild(tempInput);
+		
+		tempInput.select();
+		tempInput.setSelectionRange(0, 99999); // For mobile devices
+		
+		document.execCommand('copy');
+		
+		document.body.removeChild(tempInput);
+		
+		console.log('Copied: ' + text);
+	  }
+	  
 	const transaction_columns = [
 		{
 		title: 'Type',
@@ -127,10 +147,11 @@ const Dashboard = () =>{
 					<div  style={{fontFamily:"Rubik"}}>
 						<div className="flex items-center mt-2">
 						<p className="bg-slate-300 rounded-lg border-2 p-4 text-xs w-full overflow-x-auto">
-						https://block-vesta.vercel.app?referal=
+						https://block-vesta.vercel.app/signup?ref={code}
 						</p>
 						<button
-						onClick={() => copyToClipboard('btcAddress')}
+						
+						onClick={() => copyToClipboard(`https://block-vesta.vercel.app/signup?ref=${code}`)}
 						className="ml-2 text-blue-500 hover:text-blue-700"
 						>
 						<CopyOutlined />
